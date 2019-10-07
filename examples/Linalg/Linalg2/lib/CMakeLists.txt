@@ -4,7 +4,7 @@ set(LLVM_OPTIONAL_SOURCES
   Transforms.cpp
   )
 
-add_llvm_library(Linalg2
+add_llvm_library(Linalg2 STATIC
   TensorOps.cpp
   Transforms.cpp
   )
@@ -23,7 +23,7 @@ target_link_libraries(Linalg2
     Linalg1
     )
 
-add_llvm_library(Linalg2DialectConstruction
+add_llvm_library(Linalg2DialectConstruction STATIC
   DialectConstruction.cpp
   )
 

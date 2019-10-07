@@ -1,6 +1,6 @@
 add_subdirectory(Utils)
 
-add_llvm_library(MLIRTransforms
+add_llvm_library(MLIRTransforms STATIC
   AffineDataCopyGeneration.cpp
   Canonicalizer.cpp
   CSE.cpp
@@ -31,6 +31,7 @@ add_dependencies(MLIRTransforms MLIRStandardOpsIncGen)
 target_link_libraries(MLIRTransforms
   MLIRAffineOps
   MLIRAnalysis
+  MLIREDSC
   MLIRLoopOps
   MLIRPass
   MLIRTransformUtils

@@ -1,4 +1,4 @@
-add_llvm_library(MLIRTestTransforms
+add_llvm_library(MLIRTestTransforms STATIC
   TestCallGraph.cpp
   TestConstantFold.cpp
   TestLoopFusion.cpp

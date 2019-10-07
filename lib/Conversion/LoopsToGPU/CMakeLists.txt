@@ -10,7 +10,7 @@ set(LIBS
   LLVMSupport
 )
 
-add_llvm_library(MLIRLoopsToGPU
+add_llvm_library(MLIRLoopsToGPU STATIC
   LoopsToGPU.cpp
   LoopsToGPUPass.cpp
 

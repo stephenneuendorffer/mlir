@@ -5,7 +5,7 @@ if(MLIR_CUDA_CONVERSIONS_ENABLED)
     ConvertKernelFuncToCubin.cpp
     ConvertLaunchFuncToCudaCalls.cpp
   )
-  target_link_libraries(MLIRGPUtoCUDATransforms
+  target_link_libraries(MLIRGPUtoCUDATransforms STATIC
     MLIRGPU
     MLIRLLVMIR
     MLIRNVVMIR

@@ -1,4 +1,4 @@
-add_llvm_library(MLIRSPIRVSerialization
+add_llvm_library(MLIRSPIRVSerialization STATIC
   Deserializer.cpp
   Serializer.cpp
   SPIRVBinaryUtils.cpp
@@ -14,4 +14,5 @@ add_dependencies(MLIRSPIRVSerialization
 target_link_libraries(MLIRSPIRVSerialization
   MLIRIR
   MLIRSPIRV
-  MLIRSupport)
+  MLIRSupport
+  MLIRTranslation)

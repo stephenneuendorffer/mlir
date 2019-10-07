@@ -1,4 +1,4 @@
-add_llvm_library(MLIRGPUtoNVVMTransforms
+add_llvm_library(MLIRGPUtoNVVMTransforms STATIC
   LowerGpuOpsToNVVMOps.cpp
   )
 target_link_libraries(MLIRGPUtoNVVMTransforms
@@ -6,5 +6,7 @@ target_link_libraries(MLIRGPUtoNVVMTransforms
   MLIRGPU
   MLIRLLVMIR
   MLIRNVVMIR
+  MLIRStandardToLLVM
+  MLIRTransforms
   MLIRPass
   )

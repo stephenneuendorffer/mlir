@@ -1,4 +1,4 @@
-add_llvm_library(MLIRVectorToLLVM
+add_llvm_library(MLIRVectorToLLVM STATIC
   VectorToLLVM.cpp
 
   ADDITIONAL_HEADER_DIRS
@@ -6,6 +6,7 @@ add_llvm_library(MLIRVectorToLLVM
 )
 set(LIBS
   MLIRLLVMIR
+  MLIRStandardToLLVM
   MLIRTransforms
   LLVMCore
   LLVMSupport

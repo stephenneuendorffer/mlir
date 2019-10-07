@@ -2,7 +2,7 @@ set(LLVM_TARGET_DEFINITIONS StandardToSPIRV.td)
 mlir_tablegen(StandardToSPIRV.cpp.inc -gen-rewriters)
 add_public_tablegen_target(MLIRStandardToSPIRVIncGen)
 
-add_llvm_library(MLIRSPIRVConversion
+add_llvm_library(MLIRSPIRVConversion STATIC
   ConvertStandardToSPIRV.cpp
   ConvertStandardToSPIRVPass.cpp
 
@@ -19,6 +19,7 @@ target_link_libraries(MLIRSPIRVConversion
   MLIRPass
   MLIRSPIRV
   MLIRSupport
+  MLIRTransforms
   MLIRTransformUtils
   MLIRSPIRV
   MLIRStandardOps

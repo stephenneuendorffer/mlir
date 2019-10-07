@@ -1,4 +1,4 @@
-add_llvm_library(MLIRTransformUtils
+add_llvm_library(MLIRTransformUtils STATIC
   FoldUtils.cpp
   GreedyPatternRewriteDriver.cpp
   InliningUtils.cpp
@@ -15,6 +15,7 @@ add_dependencies(MLIRTransformUtils MLIRStandardOpsIncGen)
 target_link_libraries(MLIRTransformUtils
   MLIRAffineOps
   MLIRAnalysis
+  MLIRIR
   MLIRLoopOps
   MLIRPass
   MLIRStandardOps

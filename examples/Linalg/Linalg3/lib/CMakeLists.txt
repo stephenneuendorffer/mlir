@@ -7,7 +7,7 @@ set(LLVM_OPTIONAL_SOURCES
   TensorOps.cpp
   )
 
-add_llvm_library(Linalg3
+add_llvm_library(Linalg3 STATIC
   Analysis.cpp
   ConvertToLLVMDialect.cpp
   LoadStoreOps.cpp
@@ -31,7 +31,7 @@ target_link_libraries(Linalg3
     Linalg2
     )
 
-add_llvm_library(Linalg3DialectConstruction
+add_llvm_library(Linalg3DialectConstruction STATIC
   DialectConstruction.cpp
   )
 

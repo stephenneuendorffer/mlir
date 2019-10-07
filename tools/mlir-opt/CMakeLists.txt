@@ -4,16 +4,20 @@ set(LLVM_OPTIONAL_SOURCES
 
 set(LIB_LIBS
   MLIRAnalysis
+  MLIRIR
   MLIRLLVMIR
+  MLIROptMain
   MLIRParser
   MLIRPass
-  MLIRTransforms
+  MLIRQuantizerSupport
   MLIRSupport
+  MLIRTransforms
+  Linalg1LLVMConversion
 )
-add_llvm_library(MLIRMlirOptLib
+add_llvm_library(MLIRMlirOptLib STATIC
   mlir-opt.cpp
 )
-target_link_libraries(MLIRMlirOptLib ${LIB_LIBS})
+target_link_libraries(MLIRMlirOptLib ${LIB_LIBS} MLIRIR)
 
 set(LIBS
   MLIRAffineOps
@@ -60,4 +64,4 @@ add_llvm_executable(mlir-opt
 )
 llvm_update_compile_flags(mlir-opt)
 whole_archive_link(mlir-opt ${LIBS})
-target_link_libraries(mlir-opt PRIVATE MLIRIR MLIRMlirOptLib ${LIBS} LLVMSupport)
+target_link_libraries(mlir-opt PRIVATE MLIRIR ${LIBS} LLVMSupport)

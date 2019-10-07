@@ -1,4 +1,4 @@
-add_llvm_library(MLIRTestIR
+add_llvm_library(MLIRTestIR STATIC
   TestSymbolUses.cpp
 
   ADDITIONAL_HEADER_DIRS

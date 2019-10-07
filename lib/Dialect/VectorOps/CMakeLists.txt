@@ -1,4 +1,4 @@
-add_llvm_library(MLIRVectorOps
+add_llvm_library(MLIRVectorOps STATIC
   DialectRegistration.cpp
   VectorOps.cpp
 

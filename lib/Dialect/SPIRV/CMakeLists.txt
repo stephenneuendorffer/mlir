@@ -1,4 +1,4 @@
-add_llvm_library(MLIRSPIRV
+add_llvm_library(MLIRSPIRV STATIC
   DialectRegistration.cpp
   SPIRVDialect.cpp
   SPIRVOps.cpp
@@ -17,7 +17,8 @@ add_dependencies(MLIRSPIRV
 target_link_libraries(MLIRSPIRV
   MLIRIR
   MLIRParser
-  MLIRSupport)
+  MLIRSupport
+  MLIRTranslation)
 
 add_subdirectory(Serialization)
 add_subdirectory(Transforms)

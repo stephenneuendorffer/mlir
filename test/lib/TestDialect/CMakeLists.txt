@@ -9,18 +9,18 @@ mlir_tablegen(TestOps.cpp.inc -gen-op-defs)
 mlir_tablegen(TestPatterns.inc -gen-rewriters)
 add_public_tablegen_target(MLIRTestOpsIncGen)
 
-add_llvm_library(MLIRTestDialect
+add_llvm_library(MLIRTestDialect STATIC
   TestDialect.cpp
   TestPatterns.cpp
 )
 add_dependencies(MLIRTestDialect
   MLIRTestOpsIncGen
-  MLIRIR
-  LLVMSupport
   MLIRTypeInferOpInterfaceIncGen
 )
 target_link_libraries(MLIRTestDialect
   MLIRDialect
   MLIRIR
+  MLIRPass
+  MLIRTransforms
   LLVMSupport
 )

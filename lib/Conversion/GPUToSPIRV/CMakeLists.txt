@@ -1,4 +1,4 @@
-add_llvm_library(MLIRGPUtoSPIRVTransforms
+add_llvm_library(MLIRGPUtoSPIRVTransforms STATIC
   GPUToSPIRV.cpp
   )
 

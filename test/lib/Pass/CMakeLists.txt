@@ -1,4 +1,4 @@
-add_llvm_library(MLIRTestPass
+add_llvm_library(MLIRTestPass STATIC
   TestPassManager.cpp
 
   ADDITIONAL_HEADER_DIRS

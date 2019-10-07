@@ -26,13 +26,13 @@ set(LIBS
   MLIRTransforms
 )
 
-add_llvm_library(Linalg1LLVMConversion
+add_llvm_library(Linalg1LLVMConversion STATIC
   ConvertToLLVMDialect.cpp
   )
 target_link_libraries(Linalg1LLVMConversion PUBLIC MLIRLLVMIR
-  MLIRLoopToStandard MLIRStandardOps)
+  Linalg1 MLIRLoopToStandard MLIRStandardOps MLIRStandardToLLVM)
 
-add_llvm_library(Linalg1
+add_llvm_library(Linalg1 STATIC
   Analysis.cpp
   SliceOp.cpp
   ViewOp.cpp
@@ -50,7 +50,7 @@ target_link_libraries(Linalg1
     Linalg1LLVMConversion
   )
 
-add_llvm_library(Linalg1DialectConstruction
+add_llvm_library(Linalg1DialectConstruction STATIC
   DialectConstruction.cpp
   )
 target_link_libraries(Linalg1DialectConstruction PUBLIC Linalg1)

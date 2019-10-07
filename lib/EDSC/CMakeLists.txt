@@ -1,4 +1,4 @@
-add_llvm_library(MLIREDSC
+add_llvm_library(MLIREDSC STATIC
   Builders.cpp
   CoreAPIs.cpp
   Helpers.cpp
